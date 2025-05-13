@@ -13,6 +13,8 @@ def csv_to_prompt_completion(input_csv_path, output_jsonl_path):
         on_bad_lines='skip'
     )
 
+    print
+
     df = df[df['body'].notnull() & df['subject'].notnull()]
 
     with open(output_jsonl_path, "w", encoding="utf-8") as f:
@@ -26,3 +28,5 @@ def csv_to_prompt_completion(input_csv_path, output_jsonl_path):
 
 
 csv_to_prompt_completion("Nazario.csv", "dataset_prompt_completion.jsonl")
+
+
