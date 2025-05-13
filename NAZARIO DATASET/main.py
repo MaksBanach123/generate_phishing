@@ -21,7 +21,7 @@ def csv_to_prompt_completion(input_csv_path, output_jsonl_path):
         for _, row in df.iterrows():
             subject = row['subject']
             body = row['body'].strip().replace('\n', ' ')
-            prompt = f"Subject: {subject}\n\nEmail body: {body}"
+            prompt = f"Subject: {subject}\n\nMessage: {body}"
             completion = ""
             json_line = {"prompt": prompt, "completion": completion}
             f.write(json.dumps(json_line, ensure_ascii=False) + "\n")
